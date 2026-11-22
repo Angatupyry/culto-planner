@@ -14,7 +14,7 @@ type Table<Row, Insert> = {
   Relationships: [];
 };
 
-export interface SongRow {
+export type SongRow = {
   id: string;
   title: string;
   lyrics: string;
@@ -23,9 +23,9 @@ export interface SongRow {
   created_by: string | null;
   created_at: Timestamp;
   updated_at: Timestamp;
-}
+};
 
-export interface ServiceRow {
+export type ServiceRow = {
   id: string;
   service_date: string; // YYYY-MM-DD
   label: string;
@@ -35,9 +35,9 @@ export interface ServiceRow {
   created_by: string | null;
   created_at: Timestamp;
   updated_at: Timestamp;
-}
+};
 
-export interface ServiceItemRow {
+export type ServiceItemRow = {
   id: string;
   service_id: string;
   kind: ItemKind;
@@ -51,11 +51,11 @@ export interface ServiceItemRow {
   added_live: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
-}
+};
 
 type Generated = 'id' | 'created_at' | 'updated_at' | 'created_by';
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       songs: Table<
@@ -81,4 +81,4 @@ export interface Database {
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };
-}
+};
