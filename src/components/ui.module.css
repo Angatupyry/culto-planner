@@ -1,0 +1,88 @@
+/* Shared form and button styles. */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  font-size: 16px; /* 16px stops iOS from zooming on focus */
+}
+
+.textarea {
+  composes: input;
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0;
+  background: var(--color-surface);
+}
+
+.button {
+  min-height: 52px;
+  padding: 0 var(--space-6);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.button:active {
+  background: var(--color-primary-pressed);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSecondary {
+  composes: button;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.buttonSecondary:active {
+  background: var(--color-bg);
+}
+
+.buttonDanger {
+  composes: buttonSecondary;
+  color: var(--color-late);
+}
+
+.iconButton {
+  width: var(--touch);
+  height: var(--touch);
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+}
