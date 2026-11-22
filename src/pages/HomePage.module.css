@@ -1,0 +1,87 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-8);
+  padding-bottom: 88px; /* room for the floating button */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section {
+  margin: var(--space-3) 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.hint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.state {
+  margin: var(--space-8) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.state p {
+  margin: 0;
+}
+
+.fab {
+  position: fixed;
+  right: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+  bottom: calc(96px + env(safe-area-inset-bottom));
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 22px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgb(51 70 211 / 30%);
+}
+
+.fab:active {
+  background: var(--color-primary-pressed);
+}
