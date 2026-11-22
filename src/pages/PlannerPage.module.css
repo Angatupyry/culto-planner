@@ -1,0 +1,42 @@
+.page {
+  padding-top: var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.back {
+  flex: none;
+  width: var(--touch);
+  height: var(--touch);
+  margin-left: -10px;
+  display: grid;
+  place-items: center;
+  color: var(--color-ink);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.state {
+  margin: var(--space-8) 0;
+  color: var(--color-muted);
+  text-align: center;
+}

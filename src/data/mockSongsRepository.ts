@@ -1,3 +1,4 @@
+import { loadJson, saveJson } from './localStore';
 import { sampleSongs } from './sampleData';
 import type { Song, SongDraft, SongsRepository } from './types';
 
@@ -11,27 +12,13 @@ export class MockSongsRepository implements SongsRepository {
   private cache: Song[] | null = null;
 
   private get songs(): Song[] {
-    this.cache ??= this.read();
+    this.cache ??= loadJson(STORAGE_KEY, () => sampleSongs);
     return this.cache;
-  }
-
-  private read(): Song[] {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw) as Song[];
-    } catch {
-      // Storage unavailable or corrupt: fall back to the sample data.
-    }
-    return sampleSongs;
   }
 
   private write(songs: Song[]) {
     this.cache = songs;
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(songs));
-    } catch {
-      // Private mode or full storage: changes last until reload.
-    }
+    saveJson(STORAGE_KEY, songs);
   }
 
   async list() {
